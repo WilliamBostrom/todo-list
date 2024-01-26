@@ -18,6 +18,7 @@ const db = getFirestore(app);
 console.log(db);
 
 /* ADD DOC TAR TVÅ ARUGEMENT */
+/* Sätter ett redan valt ID */
 
 addDoc(collection(db, "users"), {
   todo: "Äta pizza",
@@ -31,4 +32,8 @@ addDoc(collection(db, "users"), {
     console.log(err);
   });
 
-/* Setdoc för att ge sitt egna did */
+/* Setdoc för att ge sitt egna ID*/
+/* För att använda setDock behövs 
+DB- vart vi vi vi lägg till data
+DOC(), vart vi vi passa DB, collection namn och custom ID,
+SETDOCK vart vi passar datan med Doc() Metoden*/
