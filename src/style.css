@@ -1,102 +1,204 @@
 body {
-  background: #eab0dc;
-  font-family: ubuntu;
+  margin: 0;
+  background-image: linear-gradient(to right, #d8b5ff, #1eae98);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 h1 {
   color: #fff;
-  font-size: 64px;
-  letter-spacing: 2px;
-  margin-top: 80px;
+  font-size: 6.4rem;
+  letter-spacing: 0.2rem;
+  margin-top: 8rem;
   text-align: center;
 }
 
+/* Knappar */
+a {
+  cursor: pointer;
+  height: 100% !important;
+}
+button,
+#checkbox {
+  cursor: pointer;
+}
+
+.main-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  height: 100%;
+  justify-content: space-between;
+  font-size: 1.4rem;
+}
+
+.nav-btns:link,
+.nav-btns:visited {
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.4rem;
+  transition: all 0.3s;
+  height: 100% !important;
+  width: 100% !important;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* transition: font-weight 0.3s; */
+}
+.nav-btns:hover,
+.nav-btns:active {
+  border-bottom: 2px solid #d8b5ff;
+}
+
+#addTodoBtn {
+  cursor: pointer;
+  border: 0.2rem solid #3333332d;
+  background: #1eae98b2;
+  color: #333;
+  border-radius: 5rem;
+  padding: 1rem 1.3rem;
+  width: 10rem;
+  box-shadow: -0.1rem 0rem 0.1rem rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  font-size: 1.4rem;
+}
+
+/* Nav */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.192);
+  padding: 0rem 1rem;
+  height: 6.4rem;
+}
+
+nav h2 {
+  flex: 50%;
+  color: whitesmoke;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Main content */
+main {
+  padding: 0px 2rem;
+}
+
 .content {
+  padding: 1rem;
   background: #fff;
-  max-width: 960px;
-  margin: 30px auto;
-  padding: 20px 30px;
-  border-radius: 10px 120px 10px 10px;
-  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+  max-width: 96rem;
+  margin: 3rem auto;
+  padding: 2rem 3rem;
+  border-radius: 1rem 6rem 1rem 0rem;
+  box-shadow: 0.1rem 0.3rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
 ul {
   list-style-type: none;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
 }
 
 li {
-  padding: 20px;
+  padding: 0.2rem 0.1rem 0.2rem 0.2rem;
   background: #f6f6f6;
-  font-size: 20px;
+  font-size: 2rem;
   color: #555;
-  position: relative;
-  border-bottom: 1px solid #e6e6e6;
-  height: 46px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.1rem solid #e6e6e6;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
 }
 
-li:nth-child(even) {
-  padding: 20px;
-  background: #f2f2f2;
+.todo-text {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+.todo-text p {
+  padding: 0 1rem;
 }
 
-li span {
-  display: block;
+.todo-btns {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  width: 100%;
 }
 
-li span:nth-child(2) {
-  font-size: 16px;
-  margin-top: 6px;
-  color: #999;
+.todo-check {
+  flex: 3;
 }
 
-li div {
-  position: absolute;
-  top: 0;
-  right: 0px;
-  background: rgba(255, 255, 255, 0.6);
-  width: 40px;
-  text-align: center;
-  padding: 10px 0;
-  font-weight: bold;
+.todo-check span {
+  width: 3rem;
+  height: 3rem;
+  background-color: white;
+}
+
+.todo-edit-del {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 67px;
+}
+
+.edit,
+.delete {
+  border: none;
+  background-color: transparent;
   cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: -0.5rem;
+}
+
+.delete {
+  margin-right: -0.8rem;
+}
+
+.delete img {
+  width: 3rem;
+  margin-left: 0.5rem;
+}
+
+.edit img {
+  width: 2.2rem;
+}
+
+form {
+  display: flex;
 }
 
 form input {
-  float: left;
-  width: 38%;
   margin: 0;
   border: 0;
   border-bottom: 1px solid #eee;
   margin: 0 1%;
-  padding: 10px;
+  padding: 1rem;
   display: block;
   box-sizing: border-box;
-  font-size: 18px;
+  font-size: 1.8rem;
 }
 
 form input:focus {
   outline: none;
-  border-bottom: 3px solid #88236f;
-  padding-bottom: 8px;
+  border-bottom: 0.3rem solid #1eae98;
+  padding-bottom: 0.8rem;
   transition: all ease 0.2s;
-}
-
-form:after {
-  content: "";
-  clear: both;
-  display: block;
-}
-
-button {
-  border: 0;
-  background: #fff;
-  border-radius: 10px;
-  padding: 13px;
-  width: 14%;
-  box-shadow: -1px 0px 1px rgba(0, 0, 0, 0.1);
-  font-weight: bold;
-  font-family: ubuntu;
-  letter-spacing: 1px;
-  color: #999;
 }

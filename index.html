@@ -4,20 +4,60 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo-list</title>
+    <title>My Todo</title>
   </head>
   <body>
-    <h1>My Todo-List</h1>
+    <nav>
+      <h2 class="nav-logo">Todo</h2>
+      <div class="main-nav-links">
+        <div class="nav-btns"><a id="signup">Bli medlem</a></div>
+        <div class="nav-btns"><a id="signin">Logga in</a></div>
+        <div class="nav-btns"><a id="signout">Logga ut</a></div>
+      </div>
+    </nav>
+    <h1>Things to do..</h1>
+    <main>
+      <div class="content">
+        <form id="add-todo-form">
+          <input
+            type="text"
+            name="text"
+            id="todo-input"
+            placeholder="Att göra"
+          />
+          <button type="submit" id="addTodoBtn">Lägg till</button>
+        </form>
 
-    <div class="content">
-      <form id="add-cafe-form">
-        <input type="text" name="name" placeholder="Att göra" />
-        <input type="text" name="city" placeholder="Kommentar" />
-        <button>Lägg till</button>
-      </form>
-
-      <ul id="cafe-list"></ul>
-    </div>
+        <ul id="todo-list">
+          <li class="todo-item" id="${item.id}">
+            <input type="checkbox" id="checkbox" />
+            <label class="todo-text"
+              ><span class="custom-checkbox"></span>
+              <p>${item.todo}</p></label
+            >
+            <div class="todo-btns">
+              <div class="todo-check">
+                <span></span>
+              </div>
+              <div class="todo-edit-del">
+                <button class="delete">
+                  <img
+                    src="./src/img/trash-svgrepo-com.svg"
+                    alt="delete button"
+                  />
+                </button>
+                <button class="edit">
+                  <img
+                    src="./src/img/edit-3-svgrepo-com.svg"
+                    alt="edit button"
+                  />
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </main>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
