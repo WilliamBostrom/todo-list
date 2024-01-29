@@ -6,7 +6,20 @@ import "./script.ts";
 import "./firebase.ts";
 import "./login.ts";
 
-import "./img/circle-checked.svg";
-import "./img/circle.svg";
-import "./img/edit-3-svgrepo-com.svg";
-import "./img/trash-svgrepo-com.svg";
+const svgContext: Record<string, () => Promise<{ default: string }>> =
+  import.meta.glob("./img/*.svg") as Record<
+    string,
+    () => Promise<{ default: string }>
+  >;
+
+const svgPaths: string[] = Object.keys(svgContext);
+
+svgPaths.forEach(async (path: string) => {
+  const svgModule = await svgContext[path]();
+  const svgElement = new DOMParser().parseFromString(
+    svgModule.default,
+    "image/svg+xml"
+  ).documentElement;
+
+  document.body.appendChild(svgElement);
+});
