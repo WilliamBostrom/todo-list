@@ -1,4 +1,12 @@
 import {
+  getAuth,
+  signInWithEmailAndPassword,
+  Auth,
+  UserCredential,
+  User,
+  onAuthStateChanged,
+} from "firebase/auth";
+import {
   app,
   data,
   dbRef,
@@ -9,7 +17,105 @@ import {
   deleteDoc,
   DocumentReference,
 } from "./firebase";
+
+import { closeLogin } from "./login";
+
 console.log(app, data, dbRef);
+
+// ------------------------
+// Lyssnar efter om inloggad/utloggad
+// ------------------------
+const auth: Auth = getAuth(app);
+console.log(auth);
+const btnOpenLogin: HTMLButtonElement | null = document.getElementById(
+  "signin"
+) as HTMLButtonElement;
+const btnOpenLogout: HTMLButtonElement | null = document.getElementById(
+  "signout"
+) as HTMLButtonElement;
+
+const content: HTMLElement | null = document.querySelector(
+  ".user-content"
+) as HTMLUnknownElement;
+const noUserContent: HTMLElement | null = document.querySelector(
+  ".nouser-content"
+) as HTMLUnknownElement;
+
+onAuthStateChanged(auth, (user: User | null) => {
+  if (user) {
+    // const userId = user.uid;
+    console.log("inloggad");
+
+    btnOpenLogin.style.display = "none";
+    btnOpenLogout.style.display = "block";
+    content.style.display = "block";
+    noUserContent.style.display = "none";
+  } else {
+    console.log("Utloggad");
+    btnOpenLogin.style.display = "block";
+    btnOpenLogout.style.display = "none";
+    content.style.display = "none";
+    noUserContent.style.display = "flex";
+  }
+});
+
+// ----------------------
+// To-Do Login
+// ----------------------
+
+const loginEmail: HTMLInputElement | null = document.getElementById(
+  "login-email"
+) as HTMLInputElement;
+const loginPassword: HTMLInputElement | null = document.getElementById(
+  "login-password"
+) as HTMLInputElement;
+const formSignin: HTMLFormElement | null = document.getElementById(
+  "signin-form"
+) as HTMLFormElement;
+
+formSignin?.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const email: string = loginEmail?.value || "";
+  const password: string = loginPassword?.value || "";
+
+  try {
+    const cred: UserCredential = await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    console.log(cred.user);
+    closeLogin();
+  } catch (error: unknown) {
+    console.log((error as Error).message);
+    showError(loginEmail, "Ogiltig email eller lösenord"); // Passera in det relevanta input-elementet
+  }
+});
+
+function showError(input: HTMLInputElement | null, message: string) {
+  if (input) {
+    const formControl: HTMLElement | null = input.parentElement;
+
+    if (formControl) {
+      formControl.className = "form-control error";
+      const small = formControl.querySelector("small");
+
+      if (small) {
+        small.innerText = message;
+      }
+    }
+  }
+}
+
+// ----------------------
+// To-Do Logout
+// ----------------------
+btnOpenLogout.addEventListener("click", () => {
+  auth.signOut();
+});
+// ----------------------
+// To-Do btn & To-Do input
+// ----------------------
 
 const addTodoBtn = document.getElementById(
   "add-todo-form"
@@ -96,6 +202,7 @@ getTodos();
 // ----------------------
 // Visar datan
 // ----------------------
+
 const showTodos = (todos: Todo[]) => {
   const displayTodos = document.getElementById(
     "todo-list"

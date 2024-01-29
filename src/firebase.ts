@@ -10,7 +10,11 @@ import {
   DocumentReference,
 } from "firebase/firestore";
 
+import { getAuth } from "firebase/auth";
+//Auth -login
+
 export {
+  auth,
   app,
   data,
   dbRef,
@@ -32,6 +36,6 @@ const firebaseConfig: any = {
 
 const app = initializeApp(firebaseConfig);
 console.log(app);
-
+const auth = getAuth(app);
 const data = getFirestore();
 const dbRef = collection(data, "todos");

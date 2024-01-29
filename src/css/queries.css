@@ -1,0 +1,23 @@
+/* ****************** */
+/* BELOW 544px (Phones)*/
+/* ****************** */
+
+@media (max-width: 34em) {
+  html {
+    /*font=size ska bli i rm 9px = 9 / 16px =56.25% */
+    font-size: 50%;
+  }
+
+  h1 {
+    font-size: 4.4rem !important;
+  }
+
+  .form {
+    flex-direction: column;
+  }
+
+  #addTodoBtn {
+    width: 100% !important;
+    margin: 1rem 0;
+  }
+}

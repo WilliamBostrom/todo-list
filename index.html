@@ -10,68 +10,13 @@
     <nav>
       <h2 class="nav-logo">Todo</h2>
       <div class="main-nav-links">
-        <div class="nav-btns"><a id="signup">Bli medlem</a></div>
         <div class="nav-btns"><a id="signin">Logga in</a></div>
         <div class="nav-btns"><a id="signout">Logga ut</a></div>
       </div>
     </nav>
-    <section class="signup-container signup-box hidden">
-      <form class="form--signup" action="" id="signup-form">
-        <h2>Skapa ett konto</h2>
 
-        <div class="form-control">
-          <label for="username">Användarnamn</label>
-          <input
-            autocomplete="username"
-            type="text"
-            id="username"
-            name="username"
-            placeholder="Skriv användarnamn"
-          />
-          <small>Error meddelande</small>
-        </div>
-
-        <div class="form-control">
-          <label for="email">Email</label>
-          <input
-            autocomplete="email"
-            type="text"
-            id="email"
-            name="email"
-            placeholder="Skriv email"
-          />
-          <small>Error meddelande</small>
-        </div>
-
-        <div class="form-control">
-          <label for="password">Lösenord</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            autocomplete="new-password"
-            placeholder="Skriv lösenord"
-          />
-          <small>Error meddelande</small>
-        </div>
-        <!-- 
-        <div class="form-control">
-          <label for="password">Bekräfta lösenord</label>
-          <input
-            type="password"
-            id="password2"
-            name="password"
-            autocomplete="new-password"
-            placeholder="Bekräfta lösenord"
-          />
-          <small>Error meddelande</small>
-        </div> -->
-
-        <button class="btn-signup">Bli medlem</button>
-      </form>
-    </section>
-    <div class="member-overlay hidden"></div>
     <!-- LOGGA IN -->
+    <div class="signin-overlay hidden-signin"></div>
     <section class="signin-container hidden-signin">
       <form class="form--signup" action="" id="signin-form">
         <h2>Logga in</h2>
@@ -103,10 +48,23 @@
         <button class="btn-signin">Logga in</button>
       </form>
     </section>
-    <h1>Things to do..</h1>
-    <main>
+    <h1>Things To-Do...</h1>
+    <ul class="nouser-content">
+      <li class="nouser-todo-item" id="">
+        <button class="edit nouser-check">
+          <img
+            class="circle-img"
+            data-todo-id="1"
+            src="./src/img/circle.svg"
+            alt="circle"
+          />
+        </button>
+        <div class="todo-text nouser-text"><p>1. Logga in</p></div>
+      </li>
+    </ul>
+    <main class="user-content">
       <div class="content">
-        <form id="add-todo-form">
+        <form class="form" id="add-todo-form">
           <input
             type="text"
             name="text"

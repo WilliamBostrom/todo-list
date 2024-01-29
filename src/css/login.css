@@ -1,16 +1,3 @@
-:root {
-  --background_primary: #fff;
-  --background_secondary: #fafafa;
-
-  --primary: #5c8e81;
-  --primary_darken: #496f65;
-
-  --text_primary: #222;
-  --text_secondary: #888;
-
-  --shadow-ambient--primary: 0 0 5px 0 #dfdfdf;
-}
-
 /* BLI MEDLEM */
 .signup-container {
   max-width: 900px;
@@ -66,7 +53,9 @@
 }
 
 .form-control input:focus {
-  border-color: rgba(0, 0, 0, 0.1);
+  outline: none;
+  border-bottom: 0.3rem solid #1eae98;
+  transition: all ease 0.1s;
 }
 
 .form-control.success input {
@@ -89,8 +78,7 @@
   visibility: visible;
 }
 
-.form--signup .btn-signin,
-.form--signup .btn-signup {
+.btn-signin {
   width: 100%;
   background-color: var(--primary_darken);
   border: none;
@@ -103,8 +91,7 @@
   cursor: pointer;
 }
 
-.form--signup .btn-signin:hover,
-.form--signup .btn-signup:hover {
+.btn-signin:hover {
   background-color: var(--primary);
 }
 
@@ -131,8 +118,7 @@ body.modal-open {
 .hidden-signin {
   display: none;
 }
-.signin-overlay,
-.member-overlay {
+.signin-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -142,6 +128,3 @@ body.modal-open {
   backdrop-filter: blur(3px);
   z-index: 3;
 }
-/* /////////////// */
-/* IFALL INLOGGAD */
-/* /////////////// */
