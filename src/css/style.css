@@ -157,7 +157,7 @@ li {
   justify-content: space-between;
   height: 67px;
 }
-
+.todo-check,
 .edit,
 .delete {
   border: none;
@@ -176,7 +176,7 @@ li {
   width: 3rem;
   margin-left: 0.5rem;
 }
-
+.todo-check img,
 .edit img {
   width: 2.2rem;
 }
@@ -201,4 +201,36 @@ form input:focus {
   border-bottom: 0.3rem solid #1eae98;
   padding-bottom: 0.8rem;
   transition: all ease 0.2s;
+}
+
+/* .checkbox-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+[type="checkbox"] {
+  opacity: 0;
+}
+
+.custom-checkbox {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 1.8rem;
+  height: 1.8rem;
+  cursor: pointer;
+  border: 2px solid #464455;
+  top: 45%;
+  left: 0.2rem;
+  transform: translateY(-50%);
+}
+
+.checkbox-active {
+  background-image: linear-gradient(to right, #d8b5ff, #1eae98);
+} */
+
+.text-active {
+  color: red;
+  font-size: 30px;
 }

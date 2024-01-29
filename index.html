@@ -15,6 +15,94 @@
         <div class="nav-btns"><a id="signout">Logga ut</a></div>
       </div>
     </nav>
+    <section class="signup-container signup-box hidden">
+      <form class="form--signup" action="" id="signup-form">
+        <h2>Skapa ett konto</h2>
+
+        <div class="form-control">
+          <label for="username">Användarnamn</label>
+          <input
+            autocomplete="username"
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Skriv användarnamn"
+          />
+          <small>Error meddelande</small>
+        </div>
+
+        <div class="form-control">
+          <label for="email">Email</label>
+          <input
+            autocomplete="email"
+            type="text"
+            id="email"
+            name="email"
+            placeholder="Skriv email"
+          />
+          <small>Error meddelande</small>
+        </div>
+
+        <div class="form-control">
+          <label for="password">Lösenord</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            autocomplete="new-password"
+            placeholder="Skriv lösenord"
+          />
+          <small>Error meddelande</small>
+        </div>
+        <!-- 
+        <div class="form-control">
+          <label for="password">Bekräfta lösenord</label>
+          <input
+            type="password"
+            id="password2"
+            name="password"
+            autocomplete="new-password"
+            placeholder="Bekräfta lösenord"
+          />
+          <small>Error meddelande</small>
+        </div> -->
+
+        <button class="btn-signup">Bli medlem</button>
+      </form>
+    </section>
+    <div class="member-overlay hidden"></div>
+    <!-- LOGGA IN -->
+    <section class="signin-container hidden-signin">
+      <form class="form--signup" action="" id="signin-form">
+        <h2>Logga in</h2>
+
+        <div class="form-control">
+          <label for="email">Email</label>
+          <input
+            autocomplete="email"
+            type="email"
+            id="login-email"
+            name="email"
+            placeholder="Skriv email"
+          />
+          <small>Error meddelande</small>
+        </div>
+
+        <div class="form-control">
+          <label for="password">Lösenord</label>
+          <input
+            type="password"
+            id="login-password"
+            name="password"
+            autocomplete="current-password"
+            placeholder="Skriv lösenord"
+          />
+          <small>Error meddelande</small>
+        </div>
+
+        <button class="btn-signin">Logga in</button>
+      </form>
+    </section>
     <h1>Things to do..</h1>
     <main>
       <div class="content">
@@ -29,32 +117,30 @@
         </form>
 
         <ul id="todo-list">
-          <li class="todo-item" id="${item.id}">
-            <input type="checkbox" id="checkbox" />
-            <label class="todo-text"
-              ><span class="custom-checkbox"></span>
-              <p>${item.todo}</p></label
-            >
+          <!--  <li class="todo-item" id="${item.id}">
+            <button class="edit todo-check">
+              <img class="circle-img" src="./src/img/circle.svg" alt="circle" />
+            </button>
+            <div class="todo-text"><p>${item.todo}</p></div>
             <div class="todo-btns">
-              <div class="todo-check">
-                <span></span>
-              </div>
               <div class="todo-edit-del">
                 <button class="delete">
                   <img
+                    class="delete-img"
                     src="./src/img/trash-svgrepo-com.svg"
                     alt="delete button"
                   />
                 </button>
                 <button class="edit">
                   <img
+                    class="edit-img"
                     src="./src/img/edit-3-svgrepo-com.svg"
                     alt="edit button"
                   />
                 </button>
               </div>
             </div>
-          </li>
+          </li> -->
         </ul>
       </div>
     </main>
