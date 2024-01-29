@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Todo</title>
+    <script type="module" crossorigin src="/assets/index-oc-gX2aJ.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-p5b5rOjz.css">
+  </head>
+  <body>
+    <nav>
+      <h2 class="nav-logo">Todo</h2>
+      <div class="main-nav-links">
+        <div class="nav-btns"><a id="signin">Logga in</a></div>
+        <div class="nav-btns"><a id="signout">Logga ut</a></div>
+      </div>
+    </nav>
+
+    <!-- LOGGA IN -->
+    <div class="signin-overlay hidden-signin"></div>
+    <section class="signin-container hidden-signin">
+      <form class="form--signup" action="" id="signin-form">
+        <h2>Logga in</h2>
+
+        <div class="form-control">
+          <label for="email">Email</label>
+          <input
+            autocomplete="email"
+            type="email"
+            id="login-email"
+            name="email"
+            placeholder="Skriv email"
+          />
+          <small>Error meddelande</small>
+        </div>
+
+        <div class="form-control">
+          <label for="password">Lösenord</label>
+          <input
+            type="password"
+            id="login-password"
+            name="password"
+            autocomplete="current-password"
+            placeholder="Skriv lösenord"
+          />
+          <small>Error meddelande</small>
+        </div>
+
+        <button class="btn-signin">Logga in</button>
+      </form>
+    </section>
+    <h1>Things To-Do...</h1>
+    <ul class="nouser-content">
+      <li class="nouser-todo-item" id="">
+        <button class="edit nouser-check">
+          <img
+            class="circle-img"
+            data-todo-id="1"
+            src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Generator:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20width='30px'%20height='30px'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M21%2012C21%2016.9706%2016.9706%2021%2012%2021C7.02944%2021%203%2016.9706%203%2012C3%207.02944%207.02944%203%2012%203C16.9706%203%2021%207.02944%2021%2012Z'%20stroke='%23464455'%20stroke-width='1.5'/%3e%3c/svg%3e"
+            alt="circle"
+          />
+        </button>
+        <div class="todo-text nouser-text"><p>1. Logga in</p></div>
+      </li>
+    </ul>
+    <main class="user-content">
+      <div class="content">
+        <form class="form" id="add-todo-form">
+          <input
+            type="text"
+            name="text"
+            id="todo-input"
+            placeholder="Att göra"
+          />
+          <button type="submit" id="addTodoBtn">Lägg till</button>
+        </form>
+
+        <ul id="todo-list">
+          <!--  <li class="todo-item" id="${item.id}">
+            <button class="edit todo-check">
+              <img class="circle-img" src="./src/img/circle.svg" alt="circle" />
+            </button>
+            <div class="todo-text"><p>${item.todo}</p></div>
+            <div class="todo-btns">
+              <div class="todo-edit-del">
+                <button class="delete">
+                  <img
+                    class="delete-img"
+                    src="./src/img/trash-svgrepo-com.svg"
+                    alt="delete button"
+                  />
+                </button>
+                <button class="edit">
+                  <img
+                    class="edit-img"
+                    src="./src/img/edit-3-svgrepo-com.svg"
+                    alt="edit button"
+                  />
+                </button>
+              </div>
+            </div>
+          </li> -->
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>
