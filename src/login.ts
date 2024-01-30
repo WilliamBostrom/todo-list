@@ -1,3 +1,6 @@
+import circleSvg from "/circle.svg";
+import checkedSvg from "/checked.svg";
+
 const btnOpenLogin: HTMLButtonElement | null = document.getElementById(
   "signin"
 ) as HTMLButtonElement;
@@ -31,8 +34,8 @@ export function closeLogin() {
   if (signInContainer) signInContainer.classList.add("hidden-signin");
   if (signInOverlay) signInOverlay.classList.add("hidden-signin");
   document.body.classList.remove("modal-open");
-  if (circleImg1 && circleImg1.src.includes("circle-checked.svg")) {
-    circleImg1.src = "./src/img/circle.svg";
+  if (circleImg1 && circleImg1.src.includes(`${circleSvg}`)) {
+    circleImg1.src = `${circleSvg}`;
   }
   if (noUserParagraph) {
     noUserParagraph.style.textDecoration = "none";
@@ -57,14 +60,16 @@ document.addEventListener("keydown", function (e) {
   }
 });
 
+if (circleImg1) {
+  circleImg1.src = circleSvg;
+}
+
 if (checkLogin) {
   checkLogin.addEventListener("click", () => {
-    console.log("heejsan");
-
     if (circleImg1) {
-      circleImg1.src = circleImg1.src.includes("circle.svg")
-        ? "./src/img/circle-checked.svg"
-        : "./src/img/circle.svg";
+      circleImg1.src = circleImg1.src.includes(`${circleSvg}`)
+        ? `${checkedSvg}`
+        : `${circleSvg}`;
 
       if (noUserParagraph) {
         noUserParagraph.style.textDecoration = "line-through";
