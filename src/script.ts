@@ -1,7 +1,10 @@
-import circleSvg from "/circle.svg";
-import checkedSvg from "/checked.svg";
+// import circleSvg from "/circle.svg";
+// import checkedSvg from "/checked.svg";
 import trashSvg from "/trash.svg";
 import editSvg from "/edit.svg";
+
+import circleSvg from "./img/circle.svg";
+import checkedSvg from ".circle-checked.svg";
 
 import {
   getAuth,
