@@ -1,8 +1,3 @@
-import circleSvg from "/circle.svg";
-import checkedSvg from "/checked.svg";
-import trashSvg from "/trash.svg";
-import editSvg from "/edit.svg";
-
 import {
   getAuth,
   signInWithEmailAndPassword,
@@ -219,7 +214,7 @@ const showTodos = (todos: Todo[]) => {
     todos.forEach((item) => {
       const li = ` <li class="todo-item" id="${item.id}">
       <button class="todo-check" data-todo-id="${item.id}">
-        <img class="circle-img" src="" alt="circle"
+        <img class="circle-img" src="./circle.svg" alt="circle"
        />
       </button>
       <div class="todo-text" data-p-id="${item.id}"><p>${item.todo}</p></div>
@@ -228,14 +223,14 @@ const showTodos = (todos: Todo[]) => {
           <button class="delete">
             <img
               class="delete-img"
-              src=""
+              src="/trash.svg"
               alt="delete button"
             />
           </button>
           <button class="edit">
             <img
               class="edit-img"
-              src=""
+              src="/edit.svg"
               alt="edit button"
             />
           </button>
@@ -305,31 +300,11 @@ const deleteButtonPressed = async (id: string | null): Promise<void> => {
 
   try {
     await deleteDoc(docRef);
-    console.log("Todo deleted successfully");
+    console.log("Todo deleted");
   } catch (error) {
     console.error("Failed to delete todo:", error);
   }
 };
-
-const editImg: HTMLImageElement | null = document.querySelector(
-  ".edit-img"
-) as HTMLImageElement;
-if (editImg) {
-  editImg.src = editSvg;
-}
-const trashImg: HTMLImageElement | null = document.querySelector(
-  ".delete-img"
-) as HTMLImageElement;
-if (trashImg) {
-  trashImg.src = trashSvg;
-}
-
-const circleImg: HTMLImageElement | null =
-  document.querySelector(".circle-img");
-
-if (circleImg) {
-  circleImg.src = circleSvg;
-}
 
 // ----------------------
 // Checkbox To do
@@ -352,15 +327,15 @@ const circleButtonPressed = (todoId: string | null): void => {
 
   if (circleImg && todoParagraph) {
     if (!checked) {
-      circleImg.src = circleSvg;
+      circleImg.src = "./circle.svg";
       circleImg.alt = "circle";
       todoParagraph.style.textDecoration = "none";
     } else {
-      circleImg.src = checkedSvg;
+      circleImg.src = "./checked.svg";
       circleImg.alt = "circle checked";
       todoParagraph.style.textDecoration = "line-through";
     }
   } else {
-    console.error("Circle image or paragraph element not found");
+    console.error("Circle image or paragraph not found");
   }
 };

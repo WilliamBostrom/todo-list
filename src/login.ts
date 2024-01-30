@@ -1,6 +1,9 @@
 import circleSvg from "/circle.svg";
 import checkedSvg from "/checked.svg";
 
+console.log(checkedSvg);
+console.log(checkedSvg);
+
 const btnOpenLogin = document.getElementById("signin") as HTMLButtonElement;
 const signInOverlay = document.querySelector(".signin-overlay") as HTMLElement;
 const signInContainer = document.querySelector(
