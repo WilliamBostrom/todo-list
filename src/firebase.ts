@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import {
+/* import {
   getFirestore,
   collection,
   addDoc,
@@ -10,10 +10,10 @@ import {
   DocumentReference,
 } from "firebase/firestore";
 
-import { getAuth } from "firebase/auth";
+import { getAuth } from "firebase/auth"; */
 //Auth -login
 
-export {
+/* export {
   auth,
   app,
   data,
@@ -24,7 +24,7 @@ export {
   updateDoc,
   deleteDoc,
   DocumentReference,
-};
+}; */
 const firebaseConfig: any = {
   apiKey: "AIzaSyBwikN3hWkM1zkAK9T_e7uAYG2Ql67U3ZM",
   authDomain: "todo-list-a0a13.firebaseapp.com",
@@ -34,8 +34,8 @@ const firebaseConfig: any = {
   appId: "1:219957146252:web:87fc9408c86649760c81a9",
 };
 
-const app = initializeApp(firebaseConfig);
-console.log(app);
-const auth = getAuth(app);
+export const app = initializeApp(firebaseConfig);
+// console.log(app);
+/* const auth = getAuth(app);
 const data = getFirestore();
-const dbRef = collection(data, "todos");
+const dbRef = collection(data, "todos"); */

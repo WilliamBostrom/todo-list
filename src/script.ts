@@ -1,10 +1,10 @@
-// import circleSvg from "/circle.svg";
-// import checkedSvg from "/checked.svg";
 import trashSvg from "/trash.svg";
 import editSvg from "/edit.svg";
-
 import circleSvg from "/circle.svg";
 import checkedSvg from "/checked.svg";
+import { closeLogin } from "./login";
+
+import { app } from "./firebase";
 
 import {
   getAuth,
@@ -15,26 +15,23 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 import {
-  app,
-  data,
-  dbRef,
+  getFirestore,
+  collection,
   addDoc,
   onSnapshot,
   doc,
   updateDoc,
   deleteDoc,
   DocumentReference,
-} from "./firebase";
+} from "firebase/firestore";
 
-import { closeLogin } from "./login";
-
-console.log(app, data, dbRef);
+const data = getFirestore();
+const dbRef = collection(data, "todos");
 
 // ------------------------
 // Lyssnar efter om inloggad/utloggad
 // ------------------------
 const auth: Auth = getAuth(app);
-console.log(auth);
 const btnOpenLogin: HTMLButtonElement | null = document.getElementById(
   "signin"
 ) as HTMLButtonElement;
@@ -51,7 +48,6 @@ const noUserContent: HTMLElement | null = document.querySelector(
 
 onAuthStateChanged(auth, (user: User | null) => {
   if (user) {
-    // const userId = user.uid;
     console.log("inloggad");
 
     btnOpenLogin.style.display = "none";
@@ -96,7 +92,7 @@ formSignin?.addEventListener("submit", async (e) => {
     closeLogin();
   } catch (error: unknown) {
     console.log((error as Error).message);
-    showError(loginEmail, "Ogiltig email eller lösenord"); // Passera in det relevanta input-elementet
+    showError(loginEmail, "Ogiltig email eller lösenord");
   }
 });
 

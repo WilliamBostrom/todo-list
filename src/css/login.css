@@ -8,26 +8,23 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  padding: 2rem;
 }
 
 /* Start Here */
 
-.signup-box {
-  background-color: var(--background_primary);
-  border-radius: 5px;
-  box-shadow: var(--shadow-ambient--primary);
-  width: 40rem;
-}
-
 .form--signup {
-  padding: 2rem;
+  background-image: linear-gradient(to right, #d8b5ff, #1eae98);
+  padding: 4rem;
   flex-direction: column;
 }
 
 .form--signup h2 {
-  font-size: 3.2rem;
+  font-size: 3.4rem;
   text-align: center;
   margin-bottom: 2rem;
+  color: var(--background_primary);
+  text-decoration: underline;
 }
 
 .form-control {
@@ -125,6 +122,6 @@ body.modal-open {
   width: 100%;
   height: 200%;
   background-color: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(3.5px);
   z-index: 3;
 }
