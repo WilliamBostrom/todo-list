@@ -34,8 +34,8 @@ export function closeLogin() {
   if (signInContainer) signInContainer.classList.add("hidden-signin");
   if (signInOverlay) signInOverlay.classList.add("hidden-signin");
   document.body.classList.remove("modal-open");
-  if (circleImg1 && circleImg1.src.includes(`${circleSvg}`)) {
-    circleImg1.src = `${circleSvg}`;
+  if (circleImg1 && circleImg1.src.includes(circleSvg)) {
+    circleImg1.src = circleSvg;
   }
   if (noUserParagraph) {
     noUserParagraph.style.textDecoration = "none";
@@ -67,9 +67,9 @@ if (circleImg1) {
 if (checkLogin) {
   checkLogin.addEventListener("click", () => {
     if (circleImg1) {
-      circleImg1.src = circleImg1.src.includes(`${circleSvg}`)
-        ? `${checkedSvg}`
-        : `${circleSvg}`;
+      circleImg1.src = circleImg1.src.includes(circleSvg)
+        ? checkedSvg
+        : circleSvg;
 
       if (noUserParagraph) {
         noUserParagraph.style.textDecoration = "line-through";
