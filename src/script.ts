@@ -3,8 +3,8 @@
 import trashSvg from "/trash.svg";
 import editSvg from "/edit.svg";
 
-import circleSvg from "./img/circle.svg";
-import checkedSvg from "./img/circle-checked.svg";
+import circleSvg from "/circle.svg";
+import checkedSvg from "/checked.svg";
 
 import {
   getAuth,
@@ -222,8 +222,7 @@ const showTodos = (todos: Todo[]) => {
     todos.forEach((item) => {
       const li = ` <li class="todo-item" id="${item.id}">
       <button class="todo-check" data-todo-id="${item.id}">
-        <img class="circle-imgs" src="${circleSvg}" alt="circle"
-       />
+        <img class="circle-imgs" src="${circleSvg}" alt="circle" />
       </button>
       <div class="todo-text" data-p-id="${item.id}"><p>${item.todo}</p></div>
       <div class="todo-btns">
@@ -247,6 +246,28 @@ const showTodos = (todos: Todo[]) => {
     </li>`;
 
       displayTodos.innerHTML += li;
+
+      const deleteImg = document.querySelector(
+        ".delete-img"
+      ) as HTMLImageElement | null;
+      const editImg = document.querySelector(
+        ".edit-img"
+      ) as HTMLImageElement | null;
+      const circleImg = document.querySelector(
+        ".circle-imgs"
+      ) as HTMLImageElement | null;
+
+      if (deleteImg) {
+        deleteImg.src = trashSvg;
+      }
+
+      if (editImg) {
+        editImg.src = editSvg;
+      }
+
+      if (circleImg) {
+        circleImg.src = circleSvg;
+      }
     });
   }
 };
