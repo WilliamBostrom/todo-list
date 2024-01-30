@@ -219,7 +219,7 @@ const showTodos = (todos: Todo[]) => {
     todos.forEach((item) => {
       const li = ` <li class="todo-item" id="${item.id}">
       <button class="todo-check" data-todo-id="${item.id}">
-        <img class="circle-img" src="${circleSvg}" alt="circle"
+        <img class="circle-img" src="" alt="circle"
        />
       </button>
       <div class="todo-text" data-p-id="${item.id}"><p>${item.todo}</p></div>
@@ -228,14 +228,14 @@ const showTodos = (todos: Todo[]) => {
           <button class="delete">
             <img
               class="delete-img"
-              src="${trashSvg}"
+              src=""
               alt="delete button"
             />
           </button>
           <button class="edit">
             <img
               class="edit-img"
-              src="${editSvg}"
+              src=""
               alt="edit button"
             />
           </button>
