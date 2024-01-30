@@ -311,6 +311,26 @@ const deleteButtonPressed = async (id: string | null): Promise<void> => {
   }
 };
 
+const editImg: HTMLImageElement | null = document.querySelector(
+  ".edit-img"
+) as HTMLImageElement;
+if (editImg) {
+  editImg.src = editSvg;
+}
+const trashImg: HTMLImageElement | null = document.querySelector(
+  ".delete-img"
+) as HTMLImageElement;
+if (trashImg) {
+  trashImg.src = trashSvg;
+}
+
+const circleImg: HTMLImageElement | null =
+  document.querySelector(".circle-img");
+
+if (circleImg) {
+  circleImg.src = circleSvg;
+}
+
 // ----------------------
 // Checkbox To do
 // ----------------------
@@ -332,11 +352,11 @@ const circleButtonPressed = (todoId: string | null): void => {
 
   if (circleImg && todoParagraph) {
     if (!checked) {
-      circleImg.src = `${circleSvg}`;
+      circleImg.src = circleSvg;
       circleImg.alt = "circle";
       todoParagraph.style.textDecoration = "none";
     } else {
-      circleImg.src = `${checkedSvg}`;
+      circleImg.src = checkedSvg;
       circleImg.alt = "circle checked";
       todoParagraph.style.textDecoration = "line-through";
     }
