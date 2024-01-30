@@ -1,3 +1,8 @@
+import circleSvg from "/circle.svg";
+import checkedSvg from "/checked.svg";
+import trashSvg from "/trash.svg";
+import editSvg from "/edit.svg";
+
 import {
   getAuth,
   signInWithEmailAndPassword,
@@ -214,7 +219,7 @@ const showTodos = (todos: Todo[]) => {
     todos.forEach((item) => {
       const li = ` <li class="todo-item" id="${item.id}">
       <button class="todo-check" data-todo-id="${item.id}">
-        <img class="circle-imgs" src="/circle.svg" alt="circle"
+        <img class="circle-imgs" src="${circleSvg}" alt="circle"
        />
       </button>
       <div class="todo-text" data-p-id="${item.id}"><p>${item.todo}</p></div>
@@ -223,14 +228,14 @@ const showTodos = (todos: Todo[]) => {
           <button class="delete">
             <img
               class="delete-img"
-              src="/trash.svg"
+              src="${trashSvg}"
               alt="delete button"
             />
           </button>
           <button class="edit">
             <img
               class="edit-img"
-              src="/edit.svg"
+              src="${editSvg}"
               alt="edit button"
             />
           </button>
@@ -327,11 +332,11 @@ const circleButtonPressed = (todoId: string | null): void => {
 
   if (circleImg && todoParagraph) {
     if (!checked) {
-      circleImg.src = "./circle.svg";
+      circleImg.src = circleSvg;
       circleImg.alt = "circle";
       todoParagraph.style.textDecoration = "none";
     } else {
-      circleImg.src = "/checked.svg";
+      circleImg.src = checkedSvg;
       circleImg.alt = "circle checked";
       todoParagraph.style.textDecoration = "line-through";
     }
