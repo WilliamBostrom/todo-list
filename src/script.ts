@@ -214,7 +214,7 @@ const showTodos = (todos: Todo[]) => {
     todos.forEach((item) => {
       const li = ` <li class="todo-item" id="${item.id}">
       <button class="todo-check" data-todo-id="${item.id}">
-        <img class="circle-img" src="./circle.svg" alt="circle"
+        <img class="circle-imgs" src="/circle.svg" alt="circle"
        />
       </button>
       <div class="todo-text" data-p-id="${item.id}"><p>${item.todo}</p></div>
@@ -257,7 +257,7 @@ const todoListPressed = (event: Event): void => {
   } else if ((event.target as HTMLElement).classList.contains("delete-img")) {
     deleteButtonPressed(id);
     console.log("fungerar", id);
-  } else if ((event.target as HTMLElement).classList.contains("circle-img")) {
+  } else if ((event.target as HTMLElement).classList.contains("circle-imgs")) {
     circleButtonPressed(id);
     console.log("circle", id);
   } else {
@@ -319,7 +319,7 @@ const circleButtonPressed = (todoId: string | null): void => {
   checked = !checked;
 
   const circleImg: HTMLImageElement | null = document.querySelector(
-    `[data-todo-id="${todoId}"] .circle-img`
+    `[data-todo-id="${todoId}"] .circle-imgs`
   );
   const todoParagraph: HTMLParagraphElement | null = document.querySelector(
     `[data-p-id="${todoId}"] p`
@@ -331,7 +331,7 @@ const circleButtonPressed = (todoId: string | null): void => {
       circleImg.alt = "circle";
       todoParagraph.style.textDecoration = "none";
     } else {
-      circleImg.src = "./checked.svg";
+      circleImg.src = "/checked.svg";
       circleImg.alt = "circle checked";
       todoParagraph.style.textDecoration = "line-through";
     }
