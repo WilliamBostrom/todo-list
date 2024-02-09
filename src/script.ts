@@ -32,17 +32,11 @@ const dbRef = collection(data, "todos");
 // Lyssnar efter om inloggad/utloggad
 // ------------------------
 const auth: Auth = getAuth(app);
-const btnOpenLogin: HTMLButtonElement | null = document.getElementById(
-  "signin"
-) as HTMLButtonElement;
-const btnOpenLogout: HTMLButtonElement | null = document.getElementById(
-  "signout"
-) as HTMLButtonElement;
+const btnOpenLogin = document.getElementById("signin") as HTMLButtonElement;
+const btnOpenLogout = document.getElementById("signout") as HTMLButtonElement;
 
-const content: HTMLElement | null = document.querySelector(
-  ".user-content"
-) as HTMLUnknownElement;
-const noUserContent: HTMLElement | null = document.querySelector(
+const content = document.querySelector(".user-content") as HTMLUnknownElement;
+const noUserContent = document.querySelector(
   ".nouser-content"
 ) as HTMLUnknownElement;
 
@@ -67,15 +61,11 @@ onAuthStateChanged(auth, (user: User | null) => {
 // To-Do Login
 // ----------------------
 
-const loginEmail: HTMLInputElement | null = document.getElementById(
-  "login-email"
-) as HTMLInputElement;
-const loginPassword: HTMLInputElement | null = document.getElementById(
+const loginEmail = document.getElementById("login-email") as HTMLInputElement;
+const loginPassword = document.getElementById(
   "login-password"
 ) as HTMLInputElement;
-const formSignin: HTMLFormElement | null = document.getElementById(
-  "signin-form"
-) as HTMLFormElement;
+const formSignin = document.getElementById("signin-form") as HTMLFormElement;
 
 formSignin?.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -132,7 +122,6 @@ if (addTodoBtn && todoInput) {
   addTodoBtn.addEventListener("submit", async (e) => {
     e.preventDefault();
     const todoValue: string | undefined = getTodo();
-    console.log(todoValue);
 
     const todoId = todoInput.getAttribute("todo-id");
 
