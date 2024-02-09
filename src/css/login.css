@@ -11,15 +11,15 @@
   padding: 2rem;
 }
 
-/* Start Here */
+/* Form Here */
 
-.form--signup {
+.form--signin {
   background-image: linear-gradient(to right, #d8b5ff, #1eae98);
   padding: 4rem;
   flex-direction: column;
 }
 
-.form--signup h2 {
+.form--signin h2 {
   font-size: 3.4rem;
   text-align: center;
   margin-bottom: 2rem;
@@ -106,7 +106,7 @@
   width: 40rem;
 }
 
-/* Modal för styling */
+/* Modal för login */
 
 body.modal-open {
   overflow: hidden;
